@@ -1,0 +1,13 @@
+[Unit]
+Description=MyFirstDaemon
+
+[Service]
+Type=simple
+Restart=on-failure
+StartLimitBurst=10
+StartLimitIntervalSec=10
+RestartSec=1
+
+ExecStart=/usr/bin/java -jar /home/user/app.jar some_out_file "Service is working!"
+[Install]
+WantedBy=multi-user.target
